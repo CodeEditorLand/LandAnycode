@@ -57,8 +57,8 @@
 	},
 	"dependencies": {},
 	"devDependencies": {
-		"tree-sitter-c": "0.23.4",
-		"tree-sitter-cli": "0.24.7",
+		"tree-sitter-c": "0.23.5",
+		"tree-sitter-cli": "0.25.1",
 		"tree-sitter-cpp": "0.23.4"
 	},
 	"preview": true

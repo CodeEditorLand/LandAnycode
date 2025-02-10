@@ -27,7 +27,7 @@
 	"dependencies": {},
 	"devDependencies": {
 		"tree-sitter-c-sharp": "0.23.1",
-		"tree-sitter-cli": "0.24.7"
+		"tree-sitter-cli": "0.25.1"
 	},
 	"preview": true
 }
