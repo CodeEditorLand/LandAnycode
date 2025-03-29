@@ -2,7 +2,7 @@
 	"name": "anycode-client",
 	"dependencies": {},
 	"devDependencies": {
-		"@types/node": "22.13.10",
+		"@types/node": "22.13.14",
 		"assert": "2.1.0"
 	}
 }
