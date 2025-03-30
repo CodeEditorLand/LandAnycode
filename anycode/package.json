@@ -79,7 +79,7 @@
 	"dependencies": {},
 	"devDependencies": {
 		"@types/node": "22.13.14",
-		"esbuild": "0.25.1"
+		"esbuild": "0.25.0"
 	},
 	"extensionPack": [
 		"ms-vscode.anycode-c-sharp",
