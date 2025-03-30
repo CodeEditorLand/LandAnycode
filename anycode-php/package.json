@@ -1,12 +1,31 @@
 {
 	"name": "anycode-php",
 	"displayName": "anycode-php",
+	"version": "0.0.1",
+	"private": false,
 	"description": "PHP for Anycode",
-	"license": "MIT",
-	"version": "0.0.8",
-	"preview": true,
+	"keywords": [
+		"codeeditorland",
+		"land",
+		"playform"
+	],
+	"homepage": "HTTPS://GitHub.Com/CodeEditorLand/LandAnycode#readme",
+	"bugs": {
+		"url": "HTTPS://GitHub.Com/CodeEditorLand/LandAnycode/issues"
+	},
 	"repository": {
-		"url": "https://github.com/microsoft/vscode-anycode"
+		"type": "git",
+		"url": "git+HTTPS://github.com/CodeEditorLand/LandAnycode.git"
+	},
+	"license": "SEE LICENSE IN LICENSE",
+	"author": {
+		"name": "Source 🖋️ Open 👐🏻",
+		"email": "Source/Open@Editor.Land",
+		"url": "HTTPS://Editor.Land"
+	},
+	"type": "module",
+	"scripts": {
+		"prepublishOnly": "Build 'Source/**/*.ts'"
 	},
 	"contributes": {
 		"anycodeLanguages": {
@@ -33,8 +52,12 @@
 	},
 	"dependencies": {},
 	"devDependencies": {
+		"@playform/build": "0.2.1",
 		"tree-sitter-cli": "0.25.3",
 		"tree-sitter-php": "0.23.12"
+	},
+	"publishConfig": {
+		"access": "public"
 	},
 	"preview": true
 }
