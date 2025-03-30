@@ -2,8 +2,11 @@
 	"name": "anycode-java",
 	"displayName": "anycode-java",
 	"description": "Java for Anycode",
-	"scripts": {
-		"deploy": "npx vsce publish"
+	"license": "MIT",
+	"version": "0.0.8",
+	"preview": true,
+	"repository": {
+		"url": "https://github.com/microsoft/vscode-anycode"
 	},
 	"contributes": {
 		"anycodeLanguages": {
@@ -27,8 +30,7 @@
 	},
 	"dependencies": {},
 	"devDependencies": {
-		"tree-sitter-cli": "0.25.3",
-		"tree-sitter-java": "0.23.5"
-	},
-	"preview": true
+		"tree-sitter-cli": "^0.20.8",
+		"tree-sitter-java": "^0.23.5"
+	}
 }

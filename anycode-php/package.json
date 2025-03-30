@@ -2,8 +2,11 @@
 	"name": "anycode-php",
 	"displayName": "anycode-php",
 	"description": "PHP for Anycode",
-	"scripts": {
-		"deploy": "npx vsce publish"
+	"license": "MIT",
+	"version": "0.0.8",
+	"preview": true,
+	"repository": {
+		"url": "https://github.com/microsoft/vscode-anycode"
 	},
 	"contributes": {
 		"anycodeLanguages": {

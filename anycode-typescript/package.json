@@ -2,8 +2,11 @@
 	"name": "anycode-typescript",
 	"displayName": "anycode-typescript",
 	"description": "TypeScript for Anycode",
-	"scripts": {
-		"deploy": "npx vsce publish"
+	"license": "MIT",
+	"version": "0.0.7",
+	"preview": true,
+	"repository": {
+		"url": "https://github.com/microsoft/vscode-anycode"
 	},
 	"contributes": {
 		"anycodeLanguages": {

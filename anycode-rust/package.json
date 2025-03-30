@@ -2,8 +2,11 @@
 	"name": "anycode-rust",
 	"displayName": "anycode-rust",
 	"description": "Rust for Anycode",
-	"scripts": {
-		"deploy": "npx vsce publish"
+	"license": "MIT",
+	"version": "0.0.8",
+	"preview": true,
+	"repository": {
+		"url": "https://github.com/microsoft/vscode-anycode"
 	},
 	"contributes": {
 		"anycodeLanguages": {

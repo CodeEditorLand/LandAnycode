@@ -2,8 +2,11 @@
 	"name": "anycode-c-sharp",
 	"displayName": "anycode-c-sharp",
 	"description": "C# for Anycode",
-	"scripts": {
-		"deploy": "npx vsce publish"
+	"license": "MIT",
+	"version": "0.0.8",
+	"preview": true,
+	"repository": {
+		"url": "https://github.com/microsoft/vscode-anycode"
 	},
 	"contributes": {
 		"anycodeLanguages": {
@@ -26,8 +29,8 @@
 	},
 	"dependencies": {},
 	"devDependencies": {
-		"tree-sitter-c-sharp": "0.23.1",
-		"tree-sitter-cli": "0.25.3"
-	},
-	"preview": true
+		"@playwright/test": "^1.14.1",
+		"tree-sitter-cli": "^0.20.8",
+		"tree-sitter-c-sharp": "^0.23.1"
+	}
 }
