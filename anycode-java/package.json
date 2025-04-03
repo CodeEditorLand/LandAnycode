@@ -50,8 +50,8 @@
 	"dependencies": {},
 	"devDependencies": {
 		"@playform/build": "0.2.1",
-		"tree-sitter-cli": "^0.25.3",
-		"tree-sitter-java": "^0.23.5"
+		"tree-sitter-cli": "0.25.3",
+		"tree-sitter-java": "0.23.5"
 	},
 	"publishConfig": {
 		"access": "public"
