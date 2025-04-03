@@ -58,7 +58,7 @@
 	"devDependencies": {
 		"@playform/build": "0.2.1",
 		"@swimm/tree-sitter-kotlin": "^0.3.2",
-		"tree-sitter-cli": "^0.20.8"
+		"tree-sitter-cli": "^0.25.3"
 	},
 	"publishConfig": {
 		"access": "public"
