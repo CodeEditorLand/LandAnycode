@@ -79,7 +79,7 @@
 	},
 	"dependencies": {},
 	"devDependencies": {
-		"@playform/build": "0.2.1",
+		"@playform/build": "0.2.2",
 		"tree-sitter-c": "0.23.5",
 		"tree-sitter-cli": "0.25.3",
 		"tree-sitter-cpp": "0.23.4"

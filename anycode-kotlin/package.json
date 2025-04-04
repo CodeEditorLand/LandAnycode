@@ -56,7 +56,7 @@
 	},
 	"dependencies": {},
 	"devDependencies": {
-		"@playform/build": "0.2.1",
+		"@playform/build": "0.2.2",
 		"@swimm/tree-sitter-kotlin": "0.3.2",
 		"tree-sitter-cli": "0.25.3"
 	},
