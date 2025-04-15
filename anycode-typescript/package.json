@@ -1,7 +1,29 @@
 {
 	"name": "anycode-typescript",
 	"displayName": "anycode-typescript",
+	"version": "0.0.1",
+	"private": false,
 	"description": "TypeScript for Anycode",
+	"keywords": [
+		"codeeditorland",
+		"land",
+		"playform"
+	],
+	"homepage": "HTTPS://GitHub.Com/CodeEditorLand/LandAnycode#readme",
+	"bugs": {
+		"url": "HTTPS://GitHub.Com/CodeEditorLand/LandAnycode/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+HTTPS://github.com/CodeEditorLand/LandAnycode.git"
+	},
+	"license": "SEE LICENSE IN LICENSE",
+	"author": {
+		"name": "Source 🖋️ Open 👐🏻",
+		"email": "Source/Open@Editor.Land",
+		"url": "HTTPS://Editor.Land"
+	},
+	"type": "module",
 	"scripts": {
 		"prepublishOnly": "Build 'Source/**/*.ts'"
 	},
@@ -29,6 +51,9 @@
 		"@playform/build": "0.2.3",
 		"tree-sitter-cli": "0.25.3",
 		"tree-sitter-typescript": "0.23.2"
+	},
+	"publishConfig": {
+		"access": "public"
 	},
 	"preview": true
 }
