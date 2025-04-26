@@ -97,7 +97,7 @@
 	"dependencies": {},
 	"devDependencies": {
 		"@playform/build": "0.2.3",
-		"@types/node": "22.14.1",
+		"@types/node": "22.15.2",
 		"esbuild": "0.25.3"
 	},
 	"extensionPack": [
