@@ -28,7 +28,7 @@
 	"dependencies": {},
 	"devDependencies": {
 		"@playform/build": "0.2.3",
-		"@types/node": "22.15.2",
+		"@types/node": "22.15.3",
 		"assert": "2.1.0"
 	},
 	"publishConfig": {
