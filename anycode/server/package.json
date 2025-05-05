@@ -1,40 +1,23 @@
 {
 	"name": "anycode-client",
-	"version": "0.0.1",
-	"private": false,
-	"keywords": [
-		"codeeditorland",
-		"land",
-		"playform"
-	],
-	"homepage": "HTTPS://GitHub.Com/CodeEditorLand/LandAnycode#readme",
-	"bugs": {
-		"url": "HTTPS://GitHub.Com/CodeEditorLand/LandAnycode/issues"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+HTTPS://github.com/CodeEditorLand/LandAnycode.git"
-	},
-	"license": "SEE LICENSE IN LICENSE",
-	"author": {
-		"name": "Source 🖋️ Open 👐🏻",
-		"email": "Source/Open@Editor.Land",
-		"url": "HTTPS://Editor.Land"
-	},
-	"type": "module",
+	"license": "MIT",
+	"publisher": "ms-vscode",
 	"scripts": {
-		"prepublishOnly": "Build 'Source/**/*.ts'"
+		"postinstall": "npx playwright install-deps",
+		"test": "npx mocha --ui tdd src/**/test/*.test.js"
 	},
-	"dependencies": {},
+	"dependencies": {
+		"vscode-languageserver": "^8.0.0-next.4",
+		"vscode-languageserver-textdocument": "^1.0.4"
+	},
 	"devDependencies": {
-		"@playform/build": "0.2.3",
-		"@types/assert": "1.5.11",
-		"@types/chai": "5.2.1",
-		"assert": "2.1.0",
-		"web-tree-sitter": "0.25.3",
-		"yargs": "17.7.2"
-	},
-	"publishConfig": {
-		"access": "public"
+		"@playwright/test": "^1.14.1",
+		"@types/assert": "^1.5.6",
+		"@types/chai": "^4.2.21",
+		"@types/mocha": "~10.0.10",
+		"assert": "~2.0.0",
+		"mocha": "~11.1.0",
+		"web-tree-sitter": "0.20.8",
+		"yargs": "^17.3.1"
 	}
 }

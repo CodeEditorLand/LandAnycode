@@ -1,0 +1,21 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "watch",
+			"group": "build",
+			"isBackground": true,
+			"problemMatcher": [],
+			"path": "anycode",
+			"label": "npm: watch",
+			"detail": "node esbuild.js --watch",
+			"runOptions": {
+				"runOn": "folderOpen"
+			},
+			"presentation": {
+				"reveal": "never",
+			}
+		}
+	]
+}

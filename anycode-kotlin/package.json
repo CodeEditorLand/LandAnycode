@@ -1,67 +1,53 @@
 {
 	"name": "anycode-kotlin",
+	"publisher": "ms-vscode",
 	"displayName": "anycode-kotlin",
-	"version": "0.0.1",
-	"private": false,
 	"description": "Kotlin for Anycode",
-	"keywords": [
-		"codeeditorland",
-		"land",
-		"playform"
-	],
-	"homepage": "HTTPS://GitHub.Com/CodeEditorLand/LandAnycode#readme",
-	"bugs": {
-		"url": "HTTPS://GitHub.Com/CodeEditorLand/LandAnycode/issues"
-	},
+	"license": "MIT",
+	"version": "0.0.8",
+	"preview": true,
 	"repository": {
-		"type": "git",
-		"url": "git+HTTPS://github.com/CodeEditorLand/LandAnycode.git"
+		"url": "https://github.com/microsoft/vscode-anycode"
 	},
-	"license": "SEE LICENSE IN LICENSE",
-	"author": {
-		"name": "Source 🖋️ Open 👐🏻",
-		"email": "Source/Open@Editor.Land",
-		"url": "HTTPS://Editor.Land"
+	"engines": {
+		"vscode": "^1.67.0"
 	},
-	"type": "module",
-	"scripts": {
-		"deploy": "npx vsce publish",
-		"prepublishOnly": "Build 'Source/**/*.ts'"
-	},
+	"categories": [
+		"Programming Languages"
+	],
 	"contributes": {
+		"languages": [
+			{
+				"id": "kotlin",
+				"extensions": [
+					"kt"
+				],
+				"aliases": [
+					"kotlin"
+				]
+			}
+		],
 		"anycodeLanguages": {
+			"grammarPath": "./tree-sitter-kotlin.wasm",
+			"languageId": "kotlin",
 			"extensions": [
 				"kt"
 			],
-			"grammarPath": "./tree-sitter-kotlin.wasm",
-			"languageId": "kotlin",
 			"queryPaths": {
 				"comments": "./queries/comments.scm",
 				"folding": "./queries/folding.scm",
 				"identifiers": "./queries/identifiers.scm",
 				"references": "./queries/references.scm"
 			}
-		},
-		"languages": [
-			{
-				"aliases": [
-					"kotlin"
-				],
-				"extensions": [
-					"kt"
-				],
-				"id": "kotlin"
-			}
-		]
+		}
 	},
-	"dependencies": {},
+	"scripts": {
+		"postinstall": "npx tree-sitter build-wasm node_modules/@swimm/tree-sitter-kotlin",
+		"deploy": "npx vsce publish",
+		"test": "node ../anycode/server/src/common/test-fixture/test.js"
+	},
 	"devDependencies": {
-		"@playform/build": "0.2.3",
-		"@swimm/tree-sitter-kotlin": "0.3.2",
-		"tree-sitter-cli": "0.25.3"
-	},
-	"publishConfig": {
-		"access": "public"
-	},
-	"preview": true
+		"tree-sitter-cli": "^0.20.8",
+		"@swimm/tree-sitter-kotlin": "^0.3.2"
+	}
 }

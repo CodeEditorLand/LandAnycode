@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 export const enum CustomMessages {
-	QueueInit = "queue/init",
-	QueueUnleash = "queue/unleash",
-	FileRead = "file/read",
+	QueueInit = 'queue/init',
+	QueueUnleash = 'queue/unleash',
+	FileRead = 'file/read',
 }

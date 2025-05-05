@@ -1,16 +1,5 @@
 {
-	"compilerOptions": {
-		"baseUrl": "./",
-		"outDir": "Target",
-		"rootDir": "src"
-	},
-	"extends": "@playform/build/tsconfig",
 	"files": [],
-	"include": [
-		"src",
-		"src",
-		"src"
-	],
 	"references": [
 		{
 			"path": "./client/tsconfig.node.json"

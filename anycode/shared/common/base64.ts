@@ -3,67 +3,42 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
+
 // FROM https://github.com/microsoft/vscode/blob/559e9beea981b47ffd76d90158ccccafef663324/src/vs/base/common/buffer.ts#L288-L289
 
-const base64Alphabet =
-	"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+const base64Alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
+const base64UrlSafeAlphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_';
 
-const base64UrlSafeAlphabet =
-	"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_";
-
-export function encodeBase64(
-	buffer: Uint8Array,
-	padded = true,
-	urlSafe = false,
-) {
+export function encodeBase64(buffer: Uint8Array, padded = true, urlSafe = false) {
 	const dictionary = urlSafe ? base64UrlSafeAlphabet : base64Alphabet;
-
-	let output = "";
+	let output = '';
 
 	const remainder = buffer.byteLength % 3;
 
 	let i = 0;
-
 	for (; i < buffer.byteLength - remainder; i += 3) {
 		const a = buffer[i + 0];
-
 		const b = buffer[i + 1];
-
 		const c = buffer[i + 2];
 
 		output += dictionary[a >>> 2];
-
-		output += dictionary[((a << 4) | (b >>> 4)) & 0b111111];
-
-		output += dictionary[((b << 2) | (c >>> 6)) & 0b111111];
-
+		output += dictionary[(a << 4 | b >>> 4) & 0b111111];
+		output += dictionary[(b << 2 | c >>> 6) & 0b111111];
 		output += dictionary[c & 0b111111];
 	}
 
 	if (remainder === 1) {
 		const a = buffer[i + 0];
-
 		output += dictionary[a >>> 2];
-
 		output += dictionary[(a << 4) & 0b111111];
-
-		if (padded) {
-			output += "==";
-		}
+		if (padded) { output += '=='; }
 	} else if (remainder === 2) {
 		const a = buffer[i + 0];
-
 		const b = buffer[i + 1];
-
 		output += dictionary[a >>> 2];
-
-		output += dictionary[((a << 4) | (b >>> 4)) & 0b111111];
-
+		output += dictionary[(a << 4 | b >>> 4) & 0b111111];
 		output += dictionary[(b << 2) & 0b111111];
-
-		if (padded) {
-			output += "=";
-		}
+		if (padded) { output += '='; }
 	}
 
 	return output;
@@ -71,46 +46,31 @@ export function encodeBase64(
 
 export function decodeBase64(encoded: string) {
 	let building = 0;
-
 	let remainder = 0;
-
 	let bufi = 0;
 
 	// The simpler way to do this is `Uint8Array.from(atob(str), c => c.charCodeAt(0))`,
 	// but that's about 10-20x slower than this function in current Chromium versions.
 
-	const buffer = new Uint8Array(Math.floor((encoded.length / 4) * 3));
-
+	const buffer = new Uint8Array(Math.floor(encoded.length / 4 * 3));
 	const append = (value: number) => {
 		switch (remainder) {
 			case 3:
 				buffer[bufi++] = building | value;
-
 				remainder = 0;
-
 				break;
-
 			case 2:
 				buffer[bufi++] = building | (value >>> 2);
-
 				building = value << 6;
-
 				remainder = 3;
-
 				break;
-
 			case 1:
 				buffer[bufi++] = building | (value >>> 4);
-
 				building = value << 4;
-
 				remainder = 2;
-
 				break;
-
 			default:
 				building = value << 2;
-
 				remainder = 1;
 		}
 	};
@@ -137,7 +97,6 @@ export function decodeBase64(encoded: string) {
 	}
 
 	const unpadded = bufi;
-
 	while (remainder > 0) {
 		append(0);
 	}

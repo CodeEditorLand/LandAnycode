@@ -1,39 +1,27 @@
 {
 	"name": "anycode-c-sharp",
+	"publisher": "ms-vscode",
 	"displayName": "anycode-c-sharp",
-	"version": "0.0.1",
-	"private": false,
 	"description": "C# for Anycode",
-	"keywords": [
-		"codeeditorland",
-		"land",
-		"playform"
-	],
-	"homepage": "HTTPS://GitHub.Com/CodeEditorLand/LandAnycode#readme",
-	"bugs": {
-		"url": "HTTPS://GitHub.Com/CodeEditorLand/LandAnycode/issues"
-	},
+	"license": "MIT",
+	"version": "0.0.8",
+	"preview": true,
 	"repository": {
-		"type": "git",
-		"url": "git+HTTPS://github.com/CodeEditorLand/LandAnycode.git"
+		"url": "https://github.com/microsoft/vscode-anycode"
 	},
-	"license": "SEE LICENSE IN LICENSE",
-	"author": {
-		"name": "Source 🖋️ Open 👐🏻",
-		"email": "Source/Open@Editor.Land",
-		"url": "HTTPS://Editor.Land"
+	"engines": {
+		"vscode": "^1.67.0"
 	},
-	"type": "module",
-	"scripts": {
-		"prepublishOnly": "Build 'Source/**/*.ts'"
-	},
+	"categories": [
+		"Programming Languages"
+	],
 	"contributes": {
 		"anycodeLanguages": {
+			"grammarPath": "./tree-sitter-c_sharp.wasm",
+			"languageId": "csharp",
 			"extensions": [
 				"cs"
 			],
-			"grammarPath": "./tree-sitter-c_sharp.wasm",
-			"languageId": "csharp",
 			"queryPaths": {
 				"comments": "./queries/comments.scm",
 				"identifiers": "./queries/identifiers.scm",
@@ -46,14 +34,14 @@
 			]
 		}
 	},
-	"dependencies": {},
+	"scripts": {
+		"postinstall": "npx tree-sitter build-wasm node_modules/tree-sitter-c-sharp",
+		"deploy": "npx vsce publish",
+		"test": "node ../anycode/server/src/common/test-fixture/test.js  --outline ./fixtures/outline.cs --highlights ./fixtures/highlights.cs"
+	},
 	"devDependencies": {
-		"@playform/build": "0.2.3",
-		"tree-sitter-c-sharp": "0.23.1",
-		"tree-sitter-cli": "0.25.3"
-	},
-	"publishConfig": {
-		"access": "public"
-	},
-	"preview": true
+		"@playwright/test": "^1.14.1",
+		"tree-sitter-cli": "^0.20.8",
+		"tree-sitter-c-sharp": "^0.23.1"
+	}
 }

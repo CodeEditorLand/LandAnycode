@@ -1,40 +1,27 @@
 {
 	"name": "anycode-go",
+	"publisher": "ms-vscode",
 	"displayName": "anycode-go",
-	"version": "0.0.1",
-	"private": false,
 	"description": "Go for Anycode",
-	"keywords": [
-		"codeeditorland",
-		"land",
-		"playform"
-	],
-	"homepage": "HTTPS://GitHub.Com/CodeEditorLand/LandAnycode#readme",
-	"bugs": {
-		"url": "HTTPS://GitHub.Com/CodeEditorLand/LandAnycode/issues"
-	},
+	"license": "MIT",
+	"version": "0.0.8",
+	"preview": true,
 	"repository": {
-		"type": "git",
-		"url": "git+HTTPS://github.com/CodeEditorLand/LandAnycode.git"
+		"url": "https://github.com/microsoft/vscode-anycode"
 	},
-	"license": "SEE LICENSE IN LICENSE",
-	"author": {
-		"name": "Source 🖋️ Open 👐🏻",
-		"email": "Source/Open@Editor.Land",
-		"url": "HTTPS://Editor.Land"
+	"engines": {
+		"vscode": "^1.67.0"
 	},
-	"type": "module",
-	"scripts": {
-		"deploy": "npx vsce publish",
-		"prepublishOnly": "Build 'Source/**/*.ts'"
-	},
+	"categories": [
+		"Programming Languages"
+	],
 	"contributes": {
 		"anycodeLanguages": {
+			"grammarPath": "./tree-sitter-go.wasm",
+			"languageId": "go",
 			"extensions": [
 				"go"
 			],
-			"grammarPath": "./tree-sitter-go.wasm",
-			"languageId": "go",
 			"queryPaths": {
 				"comments": "./queries/comments.scm",
 				"identifiers": "./queries/identifiers.scm",
@@ -47,14 +34,14 @@
 			]
 		}
 	},
-	"dependencies": {},
+	"scripts": {
+		"postinstall": "npx tree-sitter build-wasm node_modules/tree-sitter-go",
+		"deploy": "npx vsce publish",
+		"test": "node ../anycode/server/src/common/test-fixture/test.js  --outline ./fixtures/outline.go --highlights ./fixtures/highlights.go"
+	},
 	"devDependencies": {
-		"@playform/build": "0.2.3",
-		"tree-sitter-cli": "0.25.3",
-		"tree-sitter-go": "0.23.4"
-	},
-	"publishConfig": {
-		"access": "public"
-	},
-	"preview": true
+		"@playwright/test": "^1.14.1",
+		"tree-sitter-cli": "^0.20.8",
+		"tree-sitter-go": "^0.23.4"
+	}
 }
