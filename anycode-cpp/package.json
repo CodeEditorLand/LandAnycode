@@ -71,9 +71,9 @@
 		"test": "node ../anycode/server/src/common/test-fixture/test.js  --outline ./fixtures/outline.c"
 	},
 	"devDependencies": {
-		"@playwright/test": "^1.14.1",
-		"tree-sitter-cli": "^0.20.8",
-		"tree-sitter-cpp": "^0.20.5",
-		"tree-sitter-c": "^0.20.8"
+		"@playwright/test": "^1.52.0",
+		"tree-sitter-cli": "^0.25.6",
+		"tree-sitter-cpp": "^0.23.4",
+		"tree-sitter-c": "^0.24.1"
 	}
 }
