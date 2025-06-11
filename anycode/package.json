@@ -116,9 +116,9 @@
 		"test-server": "cd server && npm run test"
 	},
 	"devDependencies": {
-		"@types/node": "^22.15.30",
-		"@typescript-eslint/eslint-plugin": "^8.33.1",
-		"@typescript-eslint/parser": "^8.33.1",
+		"@types/node": "^24.0.0",
+		"@typescript-eslint/eslint-plugin": "^8.34.0",
+		"@typescript-eslint/parser": "^8.34.0",
 		"@vscode/test-web": "^0.0.70",
 		"esbuild": "^0.25.5",
 		"eslint": "^9.28.0",
